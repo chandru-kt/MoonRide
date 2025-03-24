@@ -1,5 +1,115 @@
 # MoonRide
-# 🚀 Task2 : Spring Boot Microservice: Product Catalog API
+
+# 🚀 Task 1 - Identity Reconciliation Microservice
+
+This microservice is built using **Node.js**, **Express**, and **MongoDB**, and provides an API for **contact consolidation** by linking related email and phone number records.
+
+---
+
+## 📌 Features
+✅ **Identify and link contacts** (Primary & Secondary)  
+✅ **MongoDB Integration** (Atlas Database)  
+✅ **REST API with Express.js**  
+✅ **Scalable Microservice Architecture**  
+
+---
+
+## 🏠 **Project Setup**
+### **🔹 Clone Repository**
+```sh
+git clone <your-repository-url>
+cd identity-reconciliation
+```
+
+### **🔹 Install Dependencies**
+```sh
+npm install
+```
+
+### **🔹 Set Up MongoDB Atlas**
+1. **Create an account** on [MongoDB Atlas](https://www.mongodb.com/atlas).  
+2. **Create a new cluster** and a **database named `identitydb`**.  
+3. **Whitelist all IPs** (`0.0.0.0/0`).  
+4. **Update `MONGO_URI` in `index.js`:**  
+   ```js
+   const MONGO_URI = "mongodb+srv://<username>:<password>@cluster.mongodb.net/identitydb";
+   ```
+
+---
+
+## 🐙 **Run the Microservice**
+### **🔹 Start the Server**
+```sh
+node index.js
+```
+✅ **Expected Output:**  
+```
+MongoDB Connected
+Server running on port 3000
+```
+
+---
+
+## 💤 **API Endpoints**
+### **1️⃣ Identify Contact**
+**Method:** `POST`  
+**URL:** `http://localhost:3000/api/identify`  
+**Request Body:**  
+```json
+{
+  "email": "test@example.com",
+  "phoneNumber": "+1234567890"
+}
+```
+**Response:**  
+```json
+{
+  "primaryContactId": "660f5c8c9b3e2a6e7fef5a11",
+  "emails": ["test@example.com"],
+  "phoneNumbers": ["+1234567890"],
+  "secondaryContactIds": []
+}
+```
+
+---
+
+
+## 🔧 **Testing & Debugging**
+### **🔹 Use Postman to Test API**
+- **POST Request** to `/api/identify`
+- Provide an email and/or phone number
+- Validate response in **MongoDB Atlas**
+
+### **🔹 View MongoDB Logs**
+```sh
+mongosh "mongodb+srv://<username>:<password>@cluster.mongodb.net/identitydb"
+db.contacts.find().pretty()
+```
+
+### **🔹 Check Server Logs**
+```sh
+node index.js
+```
+
+---
+
+
+## 🏁 **Final Steps**
+✅ **Test in Postman**  
+✅ **Verify Data in MongoDB Atlas**  
+✅ **Deploy to a Cloud Server (Optional)**  
+
+---
+
+## 🌟 **Next Steps**
+- **Implement Caching (Redis) for Faster Lookups**  
+- **Deploy to Kubernetes**  
+- **Add Authentication (JWT)**  
+
+---
+
+
+# 🚀 Task2 - Spring Boot Microservice: Product Catalog API
 
 This microservice is a **REST API for managing a product catalog**, built with **Spring Boot**, **MongoDB**, **Docker**, and **Kubernetes**.  
 It includes **version management**, **CI/CD with GitHub Actions**, and **Kubernetes deployment with Minikube**.
