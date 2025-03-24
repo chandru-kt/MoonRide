@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservice-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: microservice
+  template:
+    metadata:
+      labels:
+        app: microservice
+    spec:
+      containers:
+      - name: microservice
+        image: my-microservice  # Ensure this matches your Docker image name
+        imagePullPolicy: IfNotPresent  # Fix: Prevents Kubernetes from pulling from Docker Hub
+        ports:
+        - containerPort: 9090
