@@ -70,6 +70,7 @@ Server running on port 3000
   "secondaryContactIds": []
 }
 ```
+![Screenshot 2025-03-23 105802](https://github.com/user-attachments/assets/980acd3c-789a-46ee-896e-06cdf96c2ed9)
 
 ---
 
@@ -197,6 +198,11 @@ Use this URL in **Postman** for testing.
 | **GET** | `/api/product/{name}` | Get product by name |
 | **PUT** | `/api/update` | Update a product |
 | **DELETE** | `/api/delete/{id}` | Delete a product |
+
+![image](https://github.com/user-attachments/assets/a8c8b50e-683e-42a9-8b37-3c58b5152c29)
+![image](https://github.com/user-attachments/assets/8fabb1ae-ed42-4b9d-a27f-dae5063ccfde)
+![image](https://github.com/user-attachments/assets/9f485cd7-2a2d-4ce1-9912-207ba09b8532)
+![image](https://github.com/user-attachments/assets/545042d7-d87a-40f9-b0d5-b319179c3b35)
 
 ---
 
